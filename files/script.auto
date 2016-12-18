@@ -1,0 +1,7 @@
+params "C:\Users\Chinenyeze\Documents\NetBeansProjects\BEFtigreOR\case-one.pem" 46.137.91.122 22 ubuntu "C:\Users\Chinenyeze\Documents\NetBeansProjects\BEFtigreOR\apache-jmeter-2.13" 1 2
+offload -s rs.pedjaapps.Linpack.Linpack
+simulate 200 mbps 180 4 2 100
+start
+collect
+am instrument -w -e class rs.pedjaapps.Linpack.LinpackTest rs.pedjaapps.Linpack.test/android.test.InstrumentationTestRunner
+stop

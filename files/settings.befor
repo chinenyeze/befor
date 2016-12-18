@@ -1,0 +1,7 @@
+PemFile;C:\Users\Chinenyeze\Documents\NetBeansProjects\BEFtigreOR\case-one.pem
+HostIP;46.137.91.122
+Port;22
+User;ubuntu
+JmeterDir;C:\Users\Chinenyeze\Documents\NetBeansProjects\BEFtigreOR\apache-jmeter-2.13
+BLPort;1
+CMPort;2

@@ -1,0 +1,63 @@
+#!/bin/bash
+#
+# rand
+#
+# randomly launches slow simulation options
+
+command=rand
+r=0
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+echo "# Type      Start" >> SimLog.dat
+
+while [ true ]
+do
+  #  change throttle then sleep for 30s
+  r=$((($RANDOM%10)+1))
+  case $r in
+  	1)
+      sudo bash slow
+      echo "default $(date +%s%3N)" >> SimLog.dat
+      ;;
+    2)
+      sudo bash slow EDGE
+      echo "EDGE $(date +%s%3N)" >> SimLog.dat
+      ;;
+    3)
+      sudo bash slow 3G
+      echo "3G $(date +%s%3N)" >> SimLog.dat
+      ;;
+    4)
+      sudo bash slow 4G
+      echo "4G $(date +%s%3N)" >> SimLog.dat
+      ;;
+    5)
+      sudo bash slow modem-56000
+      echo "modem-56000 $(date +%s%3N)" >> SimLog.dat
+      ;;
+    6)
+      sudo bash slow T3
+      echo "T3 $(date +%s%3N)" >> SimLog.dat
+      ;;
+    7)
+      sudo bash slow DSL
+      echo "DSL $(date +%s%3N)" >> SimLog.dat
+      ;;
+    8)
+      sudo bash slow wifi-a
+      echo "wifi-a $(date +%s%3N)" >> SimLog.dat
+      ;;
+    9)
+      sudo bash slow wifi-b
+      echo "wifi-b $(date +%s%3N)" >> SimLog.dat
+      ;;
+    10)
+      sudo bash slow wifi-n
+      echo "wifi-n $(date +%s%3N)" >> SimLog.dat
+      ;;
+    *)
+      echo "nothing"
+      ;;
+  esac
+  #sleep for $1 seconds
+  sleep $1
+done
